@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Orçamento — Pijammá</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+  --rose:rgb(235,199,192);
+  --rose-deep:rgb(196,142,132);
+  --rose-wash:rgba(235,199,192,.16);
+  --rose-soft:rgba(235,199,192,.32);
+  --bg:#fff;
+  --text:#4a3f3c;
+  --strong:#2f2624;
+  --muted:#9a8b87;
+  --line:rgba(235,199,192,.6);
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Poppins',system-ui,-apple-system,'Segoe UI',sans-serif;
+  font-weight:300;
+  line-height:1.8;
+  font-size:15px;
+}
+
+strong{
+  font-weight:500;
+  color:var(--strong);
+}
+
+p{
+  margin:0 0 14px;
+}
+
+/* MARCA */
+
+.brands{
+  background:var(--rose);
+  padding:24px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.brands .logo{
+  height:18px;
+  width:auto;
+}
+
+/* HERO */
+
+.hero{
+  background:
+    radial-gradient(
+      120% 140% at 50% 0%,
+      var(--rose-soft) 0%,
+      var(--rose-wash) 45%,
+      #fff 100%
+    );
+
+  padding:72px 24px 64px;
+  text-align:center;
+  border-bottom:1px solid var(--line);
+}
+
+.hero-inner{
+  max-width:700px;
+  margin:auto;
+}
+
+.eyebrow{
+  color:var(--rose-deep);
+  font-size:11px;
+  font-weight:500;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  margin-bottom:12px;
+}
+
+h1{
+  font-size:clamp(27px,5vw,38px);
+  line-height:1.3;
+  font-weight:300;
+  letter-spacing:-.02em;
+  color:var(--strong);
+  margin:0 0 15px;
+}
+
+.hero p{
+  max-width:58ch;
+  margin:auto;
+}
+
+/* CONTAINER */
+
+.wrap{
+  max-width:950px;
+  margin:auto;
+  padding:60px 24px 80px;
+}
+
+/* SECTION */
+
+.section{
+  padding-bottom:50px;
+  margin-bottom:50px;
+  border-bottom:1px solid var(--line);
+}
+
+.section:last-child{
+  border-bottom:0;
+}
+
+.section-label{
+  display:flex;
+  align-items:center;
+  gap:14px;
+
+  color:var(--rose-deep);
+  font-size:11px;
+  font-weight:500;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+
+  margin-bottom:18px;
+}
+
+.section-label:after{
+  content:"";
+  flex:1;
+  height:1px;
+  background:var(--line);
+}
+
+h2{
+  color:var(--strong);
+  font-size:25px;
+  font-weight:400;
+  line-height:1.35;
+  margin:0 0 14px;
+}
+
+h3{
+  color:var(--strong);
+  font-size:17px;
+  font-weight:400;
+  margin:32px 0 10px;
+}
+
+.intro{
+  max-width:720px;
+}
+
+/* CARDS */
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+  margin-top:28px;
+}
+
+.card{
+  background:var(--rose-wash);
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:23px;
+}
+
+.card-number{
+  font-size:11px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--rose-deep);
+  font-weight:500;
+  margin-bottom:8px;
+}
+
+.card h3{
+  margin:0 0 9px;
+  font-size:18px;
+}
+
+.card p:last-child{
+  margin-bottom:0;
+}
+
+/* LISTA */
+
+.list{
+  list-style:none;
+  padding:0;
+  margin:25px 0 0;
+}
+
+.list li{
+  position:relative;
+  padding:12px 0 12px 30px;
+  border-bottom:1px solid var(--line);
+}
+
+.list li:last-child{
+  border-bottom:0;
+}
+
+.list li:before{
+  content:"";
+  position:absolute;
+  left:4px;
+  top:21px;
+
+  width:7px;
+  height:7px;
+
+  border-radius:50%;
+  background:var(--rose-deep);
+}
+
+/* TABELA */
+
+.table-wrap{
+  overflow-x:auto;
+  margin-top:28px;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  min-width:600px;
+}
+
+th,
+td{
+  text-align:left;
+  padding:15px 12px;
+  border-bottom:1px solid var(--line);
+  vertical-align:top;
+}
+
+th{
+  color:var(--muted);
+  font-size:10px;
+  font-weight:400;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+}
+
+td{
+  font-size:14px;
+}
+
+tr:last-child td{
+  border-bottom:0;
+}
+
+/* INVESTIMENTO */
+
+.investment{
+  background:var(--rose-wash);
+  border:1px solid var(--line);
+  border-radius:22px;
+  padding:35px;
+  text-align:center;
+  margin-top:30px;
+}
+
+.investment-label{
+  color:var(--rose-deep);
+  font-size:11px;
+  font-weight:500;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  margin-bottom:10px;
+}
+
+.price{
+  color:var(--strong);
+  font-size:38px;
+  line-height:1.2;
+  font-weight:400;
+  margin-bottom:8px;
+}
+
+.investment small{
+  color:var(--muted);
+}
+
+/* PRAZO */
+
+.info{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+  margin-top:28px;
+}
+
+.info-card{
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:22px;
+}
+
+.info-label{
+  color:var(--rose-deep);
+  font-size:10px;
+  font-weight:500;
+  text-transform:uppercase;
+  letter-spacing:.15em;
+  margin-bottom:6px;
+}
+
+.info-value{
+  color:var(--strong);
+  font-size:18px;
+}
+
+/* OBSERVAÇÃO */
+
+.notice{
+  border-left:3px solid var(--rose-deep);
+  background:var(--rose-wash);
+  padding:18px 20px;
+  border-radius:0 14px 14px 0;
+  margin-top:25px;
+}
+
+/* FOOTER */
+
+footer{
+  border-top:1px solid var(--line);
+  padding:30px 24px;
+  text-align:center;
+  color:var(--muted);
+  font-size:11px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+
+.micro{
+  margin-top:12px;
+  letter-spacing:.03em;
+  text-transform:none;
+}
+
+.micro a{
+  color:var(--muted);
+  text-decoration:none;
+}
+
+@media(max-width:700px){
+
+  .hero{
+    padding:55px 20px 48px;
+  }
+
+  .wrap{
+    padding:45px 18px 60px;
+  }
+
+  .grid,
+  .info{
+    grid-template-columns:1fr;
+  }
+
+  .investment{
+    padding:28px 20px;
+  }
+
+  .price{
+    font-size:32px;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- MARCA -->
+
+<div class="brands">
+
+  <img
+    class="logo"
+    src="/pijamma-png-17113620.png"
+    alt="Pijammá"
+  >
+
+</div>
+
+
+<!-- HERO -->
+
+<header class="hero">
+
+  <div class="hero-inner">
+
+    <div class="eyebrow">
+      Proposta comercial
+    </div>
+
+    <h1>
+      Implementação de Kits e Banners por Categoria
+    </h1>
+
+    <p>
+      Desenvolvimento de novas funcionalidades para ampliar
+      as possibilidades de venda e comunicação da loja
+      Pijammá na plataforma Vnda/Olist.
+    </p>
+
+  </div>
+
+</header>
+
+
+<main class="wrap">
+
+
+  <!-- ESCOPO -->
+
+  <section class="section">
+
+    <div class="section-label">
+      Escopo do projeto
+    </div>
+
+    <h2>
+      O que será desenvolvido
+    </h2>
+
+    <p class="intro">
+      O projeto contempla duas melhorias principais na estrutura
+      atual da loja: uma solução para comercialização de produtos
+      em kits e uma estrutura para inserção de banners diretamente
+      na página de categorias, entre os produtos.
+    </p>
+
+
+    <div class="grid">
+
+
+      <div class="card">
+
+        <div class="card-number">
+          01 · Kits
+        </div>
+
+        <h3>
+          Venda de produtos em kits
+        </h3>
+
+        <p>
+          Implementação da estrutura necessária para apresentar
+          e comercializar conjuntos de produtos como kits,
+          proporcionando uma experiência de compra mais organizada
+          e adequada para ofertas combinadas.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="card-number">
+          02 · Categorias
+        </div>
+
+        <h3>
+          Banners entre os produtos
+        </h3>
+
+        <p>
+          Desenvolvimento de uma estrutura para inserir banners
+          promocionais dentro da página de categoria, permitindo
+          destacar campanhas, coleções, lançamentos e ofertas
+          durante a navegação dos produtos.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- KITS -->
+
+  <section class="section">
+
+    <div class="section-label">
+      01 · Kits
+    </div>
+
+    <h2>
+      Implementação de vendas por Kits
+    </h2>
+
+    <p>
+      Será desenvolvida a estrutura visual e funcional necessária
+      para permitir a apresentação de produtos agrupados em kits
+      dentro da loja.
+    </p>
+
+    <h3>
+      Incluído no desenvolvimento
+    </h3>
+
+    <ul class="list">
+
+      <li>
+        Estruturação da apresentação dos kits na loja.
+      </li>
+
+      <li>
+        Exibição dos produtos que fazem parte de cada kit.
+      </li>
+
+      <li>
+        Adequação da interface ao layout atual da Pijammá.
+      </li>
+
+      <li>
+        Integração com o fluxo de compra existente.
+      </li>
+
+      <li>
+        Ajustes de responsividade para desktop e mobile.
+      </li>
+
+      <li>
+        Testes de funcionamento e validação do fluxo de compra.
+      </li>
+
+    </ul>
+
+  </section>
+
+
+  <!-- BANNERS -->
+
+  <section class="section">
+
+    <div class="section-label">
+      02 · Banners
+    </div>
+
+    <h2>
+      Banners dentro da página de categoria
+    </h2>
+
+    <p>
+      Será criada uma estrutura para permitir a inserção de
+      banners promocionais no meio da grade de produtos das
+      categorias.
+    </p>
+
+    <h3>
+      Possibilidades
+    </h3>
+
+    <ul class="list">
+
+      <li>
+        Inserção de banners em posições determinadas dentro
+        da listagem de produtos.
+      </li>
+
+      <li>
+        Utilização de banners específicos para cada categoria.
+      </li>
+
+      <li>
+        Possibilidade de direcionar o banner para uma página,
+        produto, coleção ou campanha.
+      </li>
+
+      <li>
+        Estrutura preparada para desktop e mobile.
+      </li>
+
+      <li>
+        Adequação visual ao grid atual de produtos.
+      </li>
+
+      <li>
+        Configuração e testes de exibição.
+      </li>
+
+    </ul>
+
+  </section>
+
+
+  <!-- RESUMO -->
+
+  <section class="section">
+
+    <div class="section-label">
+      Resumo do investimento
+    </div>
+
+    <h2>
+      Investimento do projeto
+    </h2>
+
+    <div class="table-wrap">
+
+      <table>
+
+        <thead>
+
+          <tr>
+
+            <th>
+              Item
+            </th>
+
+            <th>
+              Desenvolvimento
+            </th>
+
+            <th>
+              Investimento
+            </th>
+
+          </tr>
+
+        </thead>
+
+        <tbody>
+
+          <tr>
+
+            <td>
+              Venda por Kits
+            </td>
+
+            <td>
+              Desenvolvimento e integração da estrutura de kits.
+            </td>
+
+            <td>
+              <strong>R$ 1.200,00</strong>
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td>
+              Banners por Categoria
+            </td>
+
+            <td>
+              Desenvolvimento da estrutura de banners dentro
+              da listagem de produtos.
+            </td>
+
+            <td>
+              <strong>R$ 900,00</strong>
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td>
+              Testes e ajustes
+            </td>
+
+            <td>
+              Validação em desktop e mobile e ajustes finais
+              relacionados às funcionalidades implementadas.
+            </td>
+
+            <td>
+              <strong>Incluso</strong>
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+
+    <div class="investment">
+
+      <div class="investment-label">
+        Investimento total
+      </div>
+
+      <div class="price">
+        R$ 2.100,00
+      </div>
+
+      <small>
+        Desenvolvimento completo das duas funcionalidades.
+      </small>
+
+    </div>
+
+  </section>
+
+
+  <!-- PRAZO -->
+
+  <section class="section">
+
+    <div class="section-label">
+      Cronograma
+    </div>
+
+    <h2>
+      Prazo e condições
+    </h2>
+
+    <div class="info">
+
+      <div class="info-card">
+
+        <div class="info-label">
+          Prazo estimado
+        </div>
+
+        <div class="info-value">
+          5 a 7 dias úteis
+        </div>
+
+      </div>
+
+
+      <div class="info-card">
+
+        <div class="info-label">
+          Plataforma
+        </div>
+
+        <div class="info-value">
+          Vnda / Olist
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="notice">
+
+      <strong>
+        Observação
+      </strong>
+
+      <p>
+        O prazo considera o acesso necessário à plataforma,
+        disponibilidade das informações e materiais necessários
+        para a implementação e eventuais validações por parte
+        do cliente.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- FINAL -->
+
+  <section class="section">
+
+    <div class="section-label">
+      Considerações finais
+    </div>
+
+    <h2>
+      Entrega
+    </h2>
+
+    <p>
+      O objetivo é entregar as duas funcionalidades integradas
+      à estrutura atual da loja, preservando a identidade visual
+      existente e garantindo uma experiência consistente em
+      desktop e dispositivos móveis.
+    </p>
+
+    <p>
+      Alterações ou novas funcionalidades não contempladas neste
+      escopo poderão ser avaliadas e orçadas separadamente.
+    </p>
+
+  </section>
+
+
+</main>
+
+
+<footer>
+
+  Orçamento desenvolvido para Pijammá
+
+  <div class="micro">
+    iscode.com.br · (15) 99682-3970
+  </div>
+
+</footer>
+
+
+</body>
+</html>
